@@ -8,6 +8,6 @@ class MyWord extends Model
 {
     protected $fillable = array('user_id','word_id',);
 
-	protected $table = 'mywords';
+	protected $table = 'user_word';
 
 }

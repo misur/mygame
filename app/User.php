@@ -10,7 +10,7 @@ use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-
+use DB;
 
 
 class User extends Model implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract{
@@ -21,9 +21,9 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 	protected $table = 'users';
 
 
- public function mywords()
-    {
-        return $this->belongsToMany('App\MyWord');
-    }
+ 	public function mywords(){
+ 		return $this->belongsToMany('App\Word', 'user_word');
+ 	}
+
 
 }
